@@ -1,8 +1,7 @@
 import {SpyFirework} from './SpyFirework'
 import {LaunchFireworkImpl} from './LaunchFirework'
 
-// Dummyでは、花火が打ち上げられていないことのテストしかできませんでした。
-// では正しく打ち上げられるかどうかをテストするにはどうしたらよいでしょうか？
+// 正しく打ち上げられるかどうかをテストするにはどうしたらよいでしょうか？
 // Spy（呼ばれたか・呼ばれていないか・どのように呼ばれたかを記録するもの）を使いましょう。
 
 describe('花火打ち上げシステム（LaunchFireworkImpl）のテスト', () => {
