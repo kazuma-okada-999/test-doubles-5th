@@ -1,11 +1,11 @@
-import {AuthServer, LaunchMissileSystem, Missile} from './Types'
+import {AuthServer, LaunchFireworkSystem, Firework} from './Types'
 
-export class LaunchFireworkImpl implements LaunchMissileSystem {
-    missile: Missile
+export class LaunchFireworkImpl implements LaunchFireworkSystem {
+    firework: Firework
     authServer: AuthServer
 
-    constructor(missile: Missile, authServer: AuthServer) {
-        this.missile = missile
+    constructor(firework: Firework, authServer: AuthServer) {
+        this.firework = firework
         this.authServer = authServer
     }
 
@@ -16,7 +16,7 @@ export class LaunchFireworkImpl implements LaunchMissileSystem {
     async launchBy(userId: string) {
         const user = await this.authServer.getUser(userId)
         if (user !== undefined) {
-            this.missile.fire()
+            this.firework.fire()
         }
     }
 

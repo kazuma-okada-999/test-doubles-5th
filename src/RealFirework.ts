@@ -12,7 +12,7 @@ export class RealFirework implements Firework {
                 return user.forecasts[0].telop
             })
 
-        // パスワードと天気によって発射するかしないかを決める
+        // パスワードと天気によって打ち上げるかしないかを決める
         if (nowWeather !== "雨") {
             return "花火を打ち上げました"
         } else {

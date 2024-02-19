@@ -1,5 +1,5 @@
-import {SpyMissile} from './SpyMissile'
-import {LaunchFireworkImpl} from './LaunchMissile'
+import {SpyFirework} from './SpyFirework'
+import {LaunchFireworkImpl} from './LaunchFirework'
 import FakeAuthServer from './FakeAuthServer'
 
 // 単純にパスワードが正しいかだけでなく、認証サーバーでのログインが必要になった場合について考えてみましょう
@@ -32,23 +32,23 @@ describe('認証サーバーのFakeのテスト', () => {
 describe('LaunchFireworkImplのテスト', () => {
     it('launchBy()にログイン済みのユーザーIDを渡した場合、花火が打ち上げられる', async () => {
         const fakeAuthServer = new FakeAuthServer()
-        const spyMissile = new SpyMissile()
-        const launchMissile = new LaunchFireworkImpl(spyMissile, fakeAuthServer)
-        launchMissile.login("user1")
+        const spyFirework = new SpyFirework()
+        const launchFirework = new LaunchFireworkImpl(spyFirework, fakeAuthServer)
+        launchFirework.login("user1")
 
-        await launchMissile.launchBy("user1")
+        await launchFirework.launchBy("user1")
 
-        expect(spyMissile.fire_wasCalled).toBeTruthy()
+        expect(spyFirework.fire_wasCalled).toBeTruthy()
     })
 
     it('launchBy()にログイン済みでないユーザーIDを渡した場合、花火が打ち上げられない', async () => {
         const fakeAuthServer = new FakeAuthServer()
-        const spyMissile = new SpyMissile()
-        const launchMissile = new LaunchFireworkImpl(spyMissile, fakeAuthServer)
-        launchMissile.login("user1")
+        const spyFirework = new SpyFirework()
+        const launchFirework = new LaunchFireworkImpl(spyFirework, fakeAuthServer)
+        launchFirework.login("user1")
 
-        await launchMissile.launchBy("user not authorized")
+        await launchFirework.launchBy("user not authorized")
 
-        expect(spyMissile.fire_wasCalled).not.toBeTruthy()
+        expect(spyFirework.fire_wasCalled).not.toBeTruthy()
     })
 })

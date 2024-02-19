@@ -8,7 +8,7 @@ function App() {
         // 本物の花火の準備
         const realFirework = new RealFirework()
 
-        // 花火を発射装置にセット
+        // 花火を打ち上げ装置にセット
         const inputElement = document.getElementById("input") as HTMLInputElement
         const password = inputElement.value
         const launchFirework = new LaunchFireworkImpl(realFirework, password)
@@ -16,8 +16,8 @@ function App() {
 
         // 花火が打ち上げられたら花火のムービー
         if (launchResult === "花火を打ち上げました") {
-            const fireworkVideo = document.getElementById("missileR18") as HTMLIFrameElement
-            // const missileVideo = document.getElementById("missileR6") as HTMLIFrameElement
+            const fireworkVideo = document.getElementById("fireworkR18") as HTMLIFrameElement
+            // const fireworkVideo = document.getElementById("fireworkR6") as HTMLIFrameElement
             fireworkVideo.src += '?autoplay=1';
             fireworkVideo.hidden = false
             const buttonElement = document.getElementById("button") as HTMLAnchorElement
@@ -26,7 +26,7 @@ function App() {
             textElement.style.display = "none"
             inputElement.style.display = "none"
         } else if (launchResult === "花火の打ち上げができません") {
-            const fireworkVideo = document.getElementById("missileR6") as HTMLIFrameElement
+            const fireworkVideo = document.getElementById("fireworkR6") as HTMLIFrameElement
             fireworkVideo.src += '?autoplay=1';
             fireworkVideo.hidden = false
             const buttonElement = document.getElementById("button") as HTMLAnchorElement
@@ -49,7 +49,7 @@ function App() {
     return (
         <div className="app">
             <iframe className="iframe"
-                    id="missileR18"
+                    id="fireworkR18"
                     width="560"
                     height="315"
                     src="https://www.youtube.com/embed/dBj3l7lXd7w"
@@ -69,7 +69,7 @@ function App() {
                     hidden={true}>
             </iframe>
             <iframe className="iframe"
-                    id="missileR6"
+                    id="fireworkR6"
                     width="560"
                     height="315"
                     src="https://www.youtube.com/embed/KGCEHeyX5zo"
@@ -80,7 +80,7 @@ function App() {
             </iframe>
             <a id="button" onClick={launchButtonClick} className="btn-emergency-real">
                 <span className="btn-emergency-real-bottom"></span>
-                <span className="btn-emergency-real-top"><span>発射</span></span>
+                <span className="btn-emergency-real-top"><span>打ち上げ</span></span>
             </a>
             <div id={"buttonText"} style={{fontSize: "100px;"}}>絶対に押すなよ！</div>
             <input id="input" type="text" placeholder="ここにパスワードを入力"></input>

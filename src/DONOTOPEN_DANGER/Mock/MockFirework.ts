@@ -1,6 +1,6 @@
-import {Missile} from "./Types";
+import {Firework} from "./Types";
 
-export class MockMissile implements Missile {
+export class MockFirework implements Firework {
     // ここにコードを記述して下さい
     private fire_wasCalled = false
     fire(): void {

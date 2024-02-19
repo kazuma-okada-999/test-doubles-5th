@@ -1,7 +1,7 @@
-import {LaunchMissileSystem, Weather, WeatherRepository} from './Types'
+import {LaunchFireworkSystem, Weather, WeatherRepository} from './Types'
 
 
-export class LaunchFireworkImpl implements LaunchMissileSystem {
+export class LaunchFireworkImpl implements LaunchFireworkSystem {
     weatherRepository: WeatherRepository
 
     constructor(weatherRepository: WeatherRepository) {

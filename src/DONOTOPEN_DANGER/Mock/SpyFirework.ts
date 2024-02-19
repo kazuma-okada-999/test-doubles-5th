@@ -1,6 +1,6 @@
-import {Missile} from './Types'
+import {Firework} from './Types'
 
-export default class SpyMissile implements Missile {
+export default class SpyFirework implements Firework {
     fire_wasCalled = false
     fire(): void {
         this.fire_wasCalled = true

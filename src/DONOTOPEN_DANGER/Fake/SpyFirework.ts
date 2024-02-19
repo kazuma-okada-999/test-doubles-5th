@@ -1,6 +1,6 @@
-import {Missile} from './Types'
+import {Firework} from './Types'
 
-export class SpyMissile implements Missile {
+export class SpyFirework implements Firework {
 
     fire_wasCalled = false
 
