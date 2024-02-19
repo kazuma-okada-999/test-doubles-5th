@@ -8,7 +8,7 @@ export class LaunchFireworkImpl implements LaunchFireworkSystem {
         this.weatherRepository = weatherRepository
     }
 
-    async launch(): Promise<string> {
+    async launch(city: string): Promise<string> {
         // テストが通るように書き換えてください
         return Promise.resolve('')
     }

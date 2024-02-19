@@ -10,5 +10,5 @@ export type WeatherRepository = {
 
 export type LaunchFireworkSystem = {
     weatherRepository: WeatherRepository
-    launch: () => Promise<string>
+    launch: (city: string) => Promise<string>
 }

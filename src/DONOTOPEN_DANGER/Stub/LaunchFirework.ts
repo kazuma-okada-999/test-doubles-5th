@@ -8,9 +8,9 @@ export class LaunchFireworkImpl implements LaunchFireworkSystem {
         this.weatherRepository = weatherRepository
     }
 
-    async launch() {
+    async launch(city: string) {
         // ここにコードを記述して下さい
-        const weather = await this.weatherRepository.getByCity("Nagoya")
+        const weather = await this.weatherRepository.getByCity(city)
         if (weather === Weather.SUNNY) {
             return "花火を打ち上げました"
         }

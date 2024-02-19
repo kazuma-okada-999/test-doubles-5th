@@ -1,6 +1,7 @@
+import {Weather} from './Types'
 import {LaunchFireworkImpl} from './LaunchFirework'
 import {StubWeatherRepository} from './StubWeatherRepository'
-import {Weather} from './Types'
+import {SpyWeatherRepository} from "./SpyWeatherRepository";
 
 // LaunchFireworkは天気APIに依存しており、返り値によって挙動が変わります。
 // このままでは本物のAPIを叩いてしまうので、時間がかかる＋テストができません。
@@ -13,7 +14,7 @@ describe('LaunchFireworkImpl（花火打ち上げ装置）のテスト', () => {
         const launchFirework = new LaunchFireworkImpl(stubWeatherRepository)
 
 
-        const result = await launchFirework.launch()
+        const result = await launchFirework.launch('')
 
 
         expect(result).toBe('花火を打ち上げました')
@@ -25,9 +26,20 @@ describe('LaunchFireworkImpl（花火打ち上げ装置）のテスト', () => {
         const launchFirework = new LaunchFireworkImpl(stubWeatherRepository)
 
 
-        const result = await launchFirework.launch()
+        const result = await launchFirework.launch('')
 
 
         expect(result).toBe('中止しました')
+    })
+
+    it('花火打ち上げ場所の都市名を渡していること', async () => {
+        const spyWeatherRepository = new SpyWeatherRepository()
+        const launchFirework = new LaunchFireworkImpl(spyWeatherRepository)
+
+
+        await launchFirework.launch('Toyota')
+
+
+        expect(spyWeatherRepository.getByCity_arg).toEqual('Toyota')
     })
 })
