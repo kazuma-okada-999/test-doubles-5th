@@ -52,7 +52,7 @@ function App() {
                     id="fireworkR18"
                     width="560"
                     height="315"
-                    src="https://www.youtube.com/embed/dBj3l7lXd7w"
+                    src="https://www.youtube.com/embed/euutqwJE1Ds"
                     title="YouTube video player" frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -62,7 +62,7 @@ function App() {
                     id="destructionR12"
                     width="560"
                     height="315"
-                    src="https://www.youtube.com/embed/YpYaWSj_21g"
+                    src="https://www.youtube.com/embed/cbCHUKxs3Lg"
                     title="YouTube video player" frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -72,7 +72,7 @@ function App() {
                     id="fireworkR6"
                     width="560"
                     height="315"
-                    src="https://www.youtube.com/embed/KGCEHeyX5zo"
+                    src="https://www.youtube.com/embed/cbCHUKxs3Lg"
                     title="YouTube video player" frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -80,12 +80,12 @@ function App() {
             </iframe>
             <a id="button" onClick={launchButtonClick} className="btn-emergency-real">
                 <span className="btn-emergency-real-bottom"></span>
-                <span className="btn-emergency-real-top"><span>打ち上げ</span></span>
+                <span className="btn-emergency-real-top"><span>花火</span></span>
             </a>
-            <div id={"buttonText"} style={{fontSize: "100px;"}}>絶対に押すなよ！</div>
+            <div id={"buttonText"} style={{fontSize: "100px;"}}>花火打ち上げ装置</div>
             <input id="input" type="text" placeholder="ここにパスワードを入力"></input>
         </div>
-    );
+    )
 }
 
-export default App;
+export default App

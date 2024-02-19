@@ -9,7 +9,7 @@ describe('花火打ち上げシステム（LaunchFireworkImpl）のテスト', (
 
     it('正しいパスワードの場合、spyFirework.fire(）が呼ばれていること', () => {
         const spyFirework = new SpyFirework()
-        const correctPassword = 'black300'
+        const correctPassword = '55party'
         const launchFirework = new LaunchFireworkImpl(spyFirework, correctPassword)
 
 
@@ -21,7 +21,7 @@ describe('花火打ち上げシステム（LaunchFireworkImpl）のテスト', (
 
     it('間違ったパスワードの場合、spyFirework.fire(）が呼ばれないこと', () => {
         const spyFirework = new SpyFirework()
-        const invalidPassword = 'white200'
+        const invalidPassword = '88event'
         const launchFirework = new LaunchFireworkImpl(spyFirework, invalidPassword)
 
 

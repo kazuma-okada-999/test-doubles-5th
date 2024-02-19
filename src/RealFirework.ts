@@ -18,10 +18,8 @@ export class RealFirework implements Firework {
         } else {
             return "花火の打ち上げができません"
         }
-
     }
     selfDestruction() {
         return "中止しました"
     }
-
 }

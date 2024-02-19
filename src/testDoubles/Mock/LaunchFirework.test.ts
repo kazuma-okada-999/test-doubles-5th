@@ -13,7 +13,7 @@ describe('花火打ち上げシステム（LaunchFireworkImpl）のテスト', (
     describe('リファクタ前', () => {
         it('正しいpasswordが設定されている場合、花火を打ち上げて中止はしないこと', () => {
             const spyFirework = new SpyFirework()
-            const correctPassword = 'black300'
+            const correctPassword = '55party'
             const launchFirework = new LaunchFireworkImpl(spyFirework, correctPassword)
 
 
@@ -26,7 +26,7 @@ describe('花火打ち上げシステム（LaunchFireworkImpl）のテスト', (
 
         it('不正なpasswordが設定されている場合、花火を打ち上げず中止すること', () => {
             const spyFirework = new SpyFirework()
-            const invalidPassword = 'white200'
+            const invalidPassword = '88event'
             const launchFirework = new LaunchFireworkImpl(spyFirework, invalidPassword)
 
 
@@ -41,7 +41,7 @@ describe('花火打ち上げシステム（LaunchFireworkImpl）のテスト', (
     describe('リファクタ後', () => {
         it('正しいpasswordが設定されている場合、花火を打ち上げて中止はしないこと', () => {
             const mockFirework = new MockFirework()
-            const correctPassword = 'black300'
+            const correctPassword = '55party'
             const launchFirework = new LaunchFireworkImpl(mockFirework, correctPassword)
 
 
@@ -53,7 +53,7 @@ describe('花火打ち上げシステム（LaunchFireworkImpl）のテスト', (
 
         it('不正なpasswordが設定されている場合、花火を打ち上げず中止すること', () => {
             const mockFirework = new MockFirework()
-            const invalidPassword = 'white200'
+            const invalidPassword = '88event'
             const launchFirework = new LaunchFireworkImpl(mockFirework, invalidPassword)
 
 

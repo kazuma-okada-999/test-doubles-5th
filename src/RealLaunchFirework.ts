@@ -10,11 +10,10 @@ export class LaunchFireworkImpl implements RealLaunchFireworkSystem {
     }
 
     async launch() {
-        if (this.password === "black300") {
+        if (this.password === "55party") {
             return await this.firework.fire()
         } else {
             return this.firework.selfDestruction()
         }
     }
-
 }

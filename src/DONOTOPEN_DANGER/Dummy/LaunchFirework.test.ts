@@ -12,7 +12,7 @@ import {LaunchFireworkImpl} from './LaunchFirework'
 describe('LaunchFireworkImpl（花火打ち上げ装置）のテスト', () => {
     it('間違ったパスワードが返った場合、fireは実行されない', () => {
         // 使うとエラーを出力する花火
-        const invalidPassword = 'white300'
+        const invalidPassword = '88event'
         const dummyFirework = new DummyFirework()
         const launchFirework = new LaunchFireworkImpl(dummyFirework, invalidPassword)
 

@@ -12,7 +12,7 @@ export class LaunchFireworkImpl implements LaunchFireworkSystem {
 
     launch() {
         // ここにコードを記述して下さい
-        if (this.password === 'black300') {
+        if (this.password === '55party') {
             this.firework.fire()
         }
     }
