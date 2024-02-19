@@ -1,43 +1,43 @@
 import React from 'react';
 import './App.css';
-import {RealMissile} from "./RealMissile";
-import {LaunchMissileImpl} from "./RealLaunchMissile";
+import {RealFirework} from "./RealFirework";
+import {LaunchFireworkImpl} from "./RealLaunchFirework";
 
 function App() {
     async function launchButtonClick() {
-        // 本物のミサイルの準備
-        const realMissile = new RealMissile()
+        // 本物の花火の準備
+        const realFirework = new RealFirework()
 
-        // ミサイルを発射装置にセット
+        // 花火を発射装置にセット
         const inputElement = document.getElementById("input") as HTMLInputElement
         const password = inputElement.value
-        const launchMissile = new LaunchMissileImpl(realMissile, password)
-        const launchResult = await launchMissile.launch()
+        const launchFirework = new LaunchFireworkImpl(realFirework, password)
+        const launchResult = await launchFirework.launch()
 
-        // ミサイルが発射されたら発射ムービー
-        if (launchResult === "ミサイルを発射しました") {
-            const missileVideo = document.getElementById("missileR18") as HTMLIFrameElement
+        // 花火が打ち上げられたら花火のムービー
+        if (launchResult === "花火を打ち上げました") {
+            const fireworkVideo = document.getElementById("missileR18") as HTMLIFrameElement
             // const missileVideo = document.getElementById("missileR6") as HTMLIFrameElement
-            missileVideo.src += '?autoplay=1';
-            missileVideo.hidden = false
+            fireworkVideo.src += '?autoplay=1';
+            fireworkVideo.hidden = false
             const buttonElement = document.getElementById("button") as HTMLAnchorElement
             buttonElement.style.display = "none"
             const textElement = document.getElementById("buttonText") as HTMLButtonElement
             textElement.style.display = "none"
             inputElement.style.display = "none"
-        } else if (launchResult === "ミサイルを発射できません") {
-            const missileVideo = document.getElementById("missileR6") as HTMLIFrameElement
-            missileVideo.src += '?autoplay=1';
-            missileVideo.hidden = false
+        } else if (launchResult === "花火の打ち上げができません") {
+            const fireworkVideo = document.getElementById("missileR6") as HTMLIFrameElement
+            fireworkVideo.src += '?autoplay=1';
+            fireworkVideo.hidden = false
             const buttonElement = document.getElementById("button") as HTMLAnchorElement
             buttonElement.style.display = "none"
             const textElement = document.getElementById("buttonText") as HTMLButtonElement
             textElement.style.display = "none"
             inputElement.style.display = "none"
         } else {
-            const missileVideo = document.getElementById("destructionR12") as HTMLIFrameElement
-            missileVideo.src += '?autoplay=1';
-            missileVideo.hidden = false
+            const fireworkVideo = document.getElementById("destructionR12") as HTMLIFrameElement
+            fireworkVideo.src += '?autoplay=1';
+            fireworkVideo.hidden = false
             const buttonElement = document.getElementById("button") as HTMLAnchorElement
             buttonElement.style.display = "none"
             const textElement = document.getElementById("buttonText") as HTMLButtonElement
