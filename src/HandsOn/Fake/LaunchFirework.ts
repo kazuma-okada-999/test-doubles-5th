@@ -11,9 +11,13 @@ export class LaunchFireworkImpl implements LaunchFireworkSystem {
 
     login(userId: string) {
         // テストが通るように実装してください
+        this.authServer.login(userId)
     }
 
     async launchBy(userId: string) {
         // テストが通るように実装してください
+        if(await this.authServer.getUser(userId)) {
+            this.firework.fire()
+        }
     }
 }

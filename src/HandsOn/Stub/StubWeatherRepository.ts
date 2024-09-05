@@ -5,6 +5,6 @@ export class StubWeatherRepository implements WeatherRepository {
     getByCity_returnValue = Promise.resolve(Weather.SUNNY)
 
     getByCity(city: string): Promise<Weather> {
-        return Promise.resolve(Weather.SUNNY)
+        return this.getByCity_returnValue
     }
 }

@@ -11,5 +11,8 @@ export class LaunchFireworkImpl implements LaunchFireworkSystem {
 
     launch() {
         // テストが通るように実装してください
+        if (this.password === "55party") {
+            this.firework.fire()
+        }
     }
 }
